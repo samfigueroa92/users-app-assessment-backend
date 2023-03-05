@@ -15,12 +15,6 @@ In this challenge, you will take an Express API that serves hard-coded data from
 
 See [the Detailed instructions section](#tasks) below for detailed instructions, tips, and hints.
 
-## Helpful links
-- [Render deploy instructions](https://docs.google.com/document/d/1KZt0TkDx5hL7A9aNmI3uZwa1tM_0JPx9rUgBi-4iPWw/edit?usp=sharing)
-- [Database setup instructions](https://docs.google.com/document/d/1faTGqezDteB4HecJp3f0aZgT7mvXU52My_7-_MNJMmo/edit?usp=sharing)
-- [student-app-backend repo](https://github.com/mikeboyle/student-app-backend)
-
-
 ## Getting started
 
 1. **Fork** this repo.
@@ -29,7 +23,29 @@ See [the Detailed instructions section](#tasks) below for detailed instructions,
 1. Start the server: `npm start`
 
 ## Submitting
-Submit your code as a pull request to the upstream repo.
+- As you write code, push or merge it to the main branch of **your fork** (not the upstream repo)
+- When the instructions, videos, or other resources say to make a PR, make that PR to **your fork**
+- **At the end of class**, make a PR of **your main branch** to the **upstream** repo main branch (so I can review your code)
+
+## Helpful resources
+**Deploying the API to render**
+
+- [Render deploy instructions](https://docs.google.com/document/d/1KZt0TkDx5hL7A9aNmI3uZwa1tM_0JPx9rUgBi-4iPWw/edit?usp=sharing)
+- [Video: API deploy](https://us06web.zoom.us/rec/share/yXGGHRpoY_duDmjX87oVPiLNtpiH16SZJUWbS6D2qWujM1vK7Z1PBBm9H5LWk3AP.8ileRqPEQmhXca3B?startTime=1676920872000&pwd=i5e07v6GrC9npe7mEzr5yJXpy3qrO9kp)
+
+**Creating the DB and connecting API to DB**
+
+- [Database setup instructions](https://docs.google.com/document/d/1faTGqezDteB4HecJp3f0aZgT7mvXU52My_7-_MNJMmo/edit?usp=sharing)
+- [Video: Create db and connect API to db](https://us06web.zoom.us/rec/share/gEz-eUuwZCbLv_VFOXvozcWSgytMj3KK3XxVnOQZwA1L7U_NSfWKASNk4vEKK-qu.VnCe5S2CSnd5exii?startTime=1677263406000&pwd=qHjCHrx55Lfu5wMCltAEozflkPcvAG1d)
+- [Code changes from the video](https://github.com/mikeboyle/student-app-backend/pull/3/files)
+
+**Create and seed data; serve data from DB**
+- [Video: Create and seed data; serve from db](https://us06web.zoom.us/rec/share/kQNjT8bane_j_vDJx8IKoZnk7Z5WalZDfMLQvzCyR0ZF7a2OUoCChN6vQAcE0Ai8.CL2R90qQjzrXpDFo?startTime=1677609325000&pwd=KRxHYGQ0iakfZkd8TaZnCtCf1LJvwtTk)
+- [Code changes from the video](https://github.com/mikeboyle/student-app-backend/pull/8/files)
+
+**Reference code**
+- [student-app-backend repo](https://github.com/mikeboyle/student-app-backend)
+
 
 ## Routes
 After each stage of the challenge, make sure that all of these routes function as expected.
@@ -58,27 +74,6 @@ After each stage of the challenge, make sure that all of these routes function a
 
 #### Tips and hints
 > The data type for `latitude` and `longitude` is **`float`**.
-
-> Notice that the `id` data type is **`uuid`** (**not** `integer`). The primary key `id` column in the table should also be a uuid, not an integer.
-
-<details>
-   <summary>Stuck? Expand for hints</summary>
-    
-- The postgresql documentation describes [what a uuid is](https://www.postgresql.org/docs/current/datatype-uuid.html) and [how to generate a uuid in postgres](https://www.postgresql.org/docs/current/functions-uuid.html).
-- You **should** define the `id` column as `PRIMARY KEY`
-- You **should** give the `id` column a `DEFAULT` value (using a function to generate a random uuid). Check out the links above.
-- Unlike integer ids, uuids are random and do not increment. You should **not** use the `SERIAL` keyword in your `CREATE TABLE` statement.
-
-</details>
-
-<details>
-    <summary>Still stuck? Expand for a solution</summary>
-
-You can define the `id` column inside your `CREATE TABLE` statement like this:
-```
-id uuid PRIMARY KEY DEFAULT gen_random_uuid()
-```
-</details>
 
 ### 4. Seed the table with the data from `usersData.json`
 1. Create a `seeds.sql` file in this repo that adds at least 3 students from `usersData.json` to the `users` table.
