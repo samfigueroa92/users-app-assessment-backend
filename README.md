@@ -61,7 +61,7 @@ After each stage of the challenge, make sure that all of these routes function a
 1. Deploy your API to render.
 1. Make sure that all routes work.
 1. **Paste your deployed URL** in the top of this README.
-1. Commit your changes to the repo.
+1. Commit and merge your changes to the main branch of **your fork**.
 
 ### 2. Create a database
 1. Create a database on Elephant SQL
@@ -70,7 +70,7 @@ After each stage of the challenge, make sure that all of these routes function a
 ### 3. Create the `users` table
 1. Create a `schema.sql` file in this repo that defines the table. The columns should match the keys and data types you see in the `usersData.json` file.
 1. Run the schema file to create the table in your db.
-1. Commit your changes.
+1. Commit and merge your changes to the main branch of **your fork**.
 
 #### Tips and hints
 > The data type for `latitude` and `longitude` is **`float`**.
@@ -78,7 +78,7 @@ After each stage of the challenge, make sure that all of these routes function a
 ### 4. Seed the table with the data from `usersData.json`
 1. Create a `seeds.sql` file in this repo that adds at least 3 students from `usersData.json` to the `users` table.
 1. The uuids in the table do not need to match the uuids in `usersData.json` (although it is possible to insert the exact ids from the JSON).
-1. Commit your changes.
+1. Commit and merge your changes to the main branch of **your fork**.
 
 #### Tips and hints
 > Don't waste time copy-pasting every single user from the JSON file. Just do 3 to start. Do the rest if you have time at the end.
@@ -92,7 +92,7 @@ After each stage of the challenge, make sure that all of these routes function a
 1. You will need to use `pg-promise`. It is already installed.
 1. Use environment variables to store the connection string (database URL).
 1. Delete the `usersData.json` file.
-1. Commit your changes.
+1. Commit and merge your changes to the main branch of **your fork**.
 
 ### 6. Final deployment
 1. If it works locally, update your environment variables on Render, then push, merge, and deploy your code changes.
