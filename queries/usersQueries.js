@@ -1,5 +1,5 @@
 // const usersData = require('../usersData.json');
-const db = require('../db/index');
+const db = require('../db/index.js');
 
 // const idToUserIndex = usersData.reduce((index, user) => {
 //   const { id } = user;
@@ -7,7 +7,10 @@ const db = require('../db/index');
 //   return index;
 // }, {});
 
-const getAllUsers = async () => await db.any('SELECT * FROM users');
+const getAllUsers = async () => {
+  const users = await db.any('SELECT * FROM users');
+  return users;
+};
 
 const getUserById = async (id) => {
   const user = await db.oneOrNone('SELECT * FROM users WHERE id = $1', [
